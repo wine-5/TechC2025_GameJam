@@ -1,6 +1,7 @@
 using UnityEngine;
 using Tech.C.Interface;
 using Tech.C.Audio;
+using Tech.C.Effect;
 
 namespace Tech.C.Item
 {
@@ -124,6 +125,12 @@ namespace Tech.C.Item
             {
                 // パーティクルエフェクトを再生
                 PlayHitParticle();
+                
+                // エフェクト再生
+                if (EffectFactory.I != null)
+                {
+                    EffectFactory.I.PlayEntertainmentEffect();
+                }
                 
                 AudioManager.I.PlaySE(SeType.GetEntertainmentItem);
                 GaugeController.I.AddEntertainment(entertainmentValue);
