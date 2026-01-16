@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
-using Tech.C; // SceneController を使うための名前空間
+using Tech.C;
+using Tech.C.Audio;
 
 public class MultiSceneLoadManager : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class MultiSceneLoadManager : MonoBehaviour
 
                 pair.button.onClick.AddListener(() =>
                 {
+                    AudioManager.I.PlaySE(SeType.ButtonClick);
                     StartCoroutine(LoadSceneAsyncWithUI(targetScene));
                 });
             }

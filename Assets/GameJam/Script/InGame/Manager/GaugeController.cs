@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Tech.C.Audio;
 
 namespace Tech.C
 {
@@ -91,6 +92,7 @@ namespace Tech.C
             
             if (gambleValue >= MAX_GAMBLE)
             {
+                AudioManager.I.PlaySE(SeType.GamblingGaugeFull);
                 PlayerPrefs.SetString("lastPlayedScene", SceneManager.GetActiveScene().name);
                 SceneController.I.LoadScene("BadEnd");
             }
@@ -103,6 +105,7 @@ namespace Tech.C
             
             if (entertainmentValue >= MAX_ENTERTAINMENT)
             {
+                AudioManager.I.PlaySE(SeType.EntertainmentGaugeFull);
                 PlayerPrefs.SetString("lastPlayedScene", SceneManager.GetActiveScene().name);
                 SceneController.I.LoadScene("GoodEnd");
             }

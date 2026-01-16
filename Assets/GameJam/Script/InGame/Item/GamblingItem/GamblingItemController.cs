@@ -1,5 +1,6 @@
 using UnityEngine;
 using Tech.C.Interface;
+using Tech.C.Audio;
 
 namespace Tech.C.Item
 {
@@ -120,6 +121,7 @@ namespace Tech.C.Item
         {
             if (other.CompareTag("Bullet"))
             {
+                AudioManager.I.PlaySE(SeType.GetGamblingItem);
                 GaugeController.I.AddGamble(gambleValueValue);
                 OnCollected(); // 弾に当たった場合はPoolに返却
             }

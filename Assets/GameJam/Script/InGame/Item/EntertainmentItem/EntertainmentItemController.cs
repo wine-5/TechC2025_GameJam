@@ -1,5 +1,6 @@
 using UnityEngine;
 using Tech.C.Interface;
+using Tech.C.Audio;
 
 namespace Tech.C.Item
 {
@@ -124,6 +125,7 @@ namespace Tech.C.Item
                 // パーティクルエフェクトを再生
                 PlayHitParticle();
                 
+                AudioManager.I.PlaySE(SeType.GetEntertainmentItem);
                 GaugeController.I.AddEntertainment(entertainmentValue);
                 OnCollected(); // 弾に当たった場合はPoolに返却
             }

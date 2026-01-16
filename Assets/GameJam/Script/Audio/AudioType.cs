@@ -6,18 +6,11 @@ namespace Tech.C.Audio
     public enum SeType
     {
         None,
-        Button,
-        Charge,
-        Projectile,
-        ChargedProjectile,
-        NormalAttack,
-        Jump,
-        BossDefeat,
-        TakeDamage,
-        EnemyDefeat,
-        FullStock,
-        Warning,
-        EnemyHit,
+        ButtonClick,
+        GetEntertainmentItem,
+        GetGamblingItem,
+        EntertainmentGaugeFull,
+        GamblingGaugeFull,
     }
 
     /// <summary>
@@ -28,8 +21,7 @@ namespace Tech.C.Audio
         None,
         Title,
         InGame,
-        Boss,
-        GameClear,
-        GameOver,
+        GoodEnd,
+        BadEnd,
     }
 }
