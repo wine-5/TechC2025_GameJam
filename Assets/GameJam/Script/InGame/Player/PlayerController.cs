@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Tech.C.Bullet;
+using Tech.C.Player;
 
 namespace Tech.C.Player
 {
@@ -21,10 +22,22 @@ namespace Tech.C.Player
         {
             rb = GetComponent<Rigidbody2D>();
             animCtrl = GetComponent<PlayerAnimationController>();
+            
+            // PlayerDataProviderに登録
+            if (PlayerDataProvider.I != null)
+            {
+                PlayerDataProvider.I.RegisterPlayerTransform(transform);
+            }
         }
 
         private void Update()
         {
+            // PlayerDataProviderに位置を更新
+            if (PlayerDataProvider.I != null)
+            {
+                PlayerDataProvider.I.UpdatePosition(transform.position);
+            }
+            
             // PauseManagerの状態をチェック
             if (Tech.C.System.PauseManager.I != null)
             {
