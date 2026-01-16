@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7905176432459907112}
   - component: {fileID: 6809641883965129763}
   - component: {fileID: -2871322804671486626}
+  - component: {fileID: -3005347941428219060}
   m_Layer: 0
   m_Name: Game4
   m_TagString: Untagged
@@ -194,3 +195,17 @@ MonoBehaviour:
   zigzagAmplitude: 0
   zigzagFrequency: 10
   playerObject: {fileID: 2074521694677656342, guid: 4276adfadebf9454a839163ff59032b6, type: 3}
+--- !u!114 &-3005347941428219060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6882585684949341207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 111427a86da5cd04884779dac3462925, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bottomBoundary: -10
+  sideBoundary: 15
