@@ -282,7 +282,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4354373640974470802}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Tech.C.SceneController, Assembly-CSharp
+        m_MethodName: LoadStage1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4463542986001303168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -558,13 +570,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonScenePairs:
   - button: {fileID: 345291007118586178}
-    sceneName: Stage1
+    sceneType: 0
   - button: {fileID: 4018701591748721498}
-    sceneName: Stage2
+    sceneType: 0
   - button: {fileID: 8204992900730207826}
-    sceneName: Stage3
+    sceneType: 0
   - button: {fileID: 1176182406726642872}
-    sceneName: Stage4
+    sceneType: 0
   loadingPanel: {fileID: 0}
   progressBar: {fileID: 0}
 --- !u!1 &4148452828924481295
@@ -824,7 +836,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4126496239730908774}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Tech.C.SceneController, Assembly-CSharp
+        m_MethodName: LoadStage4
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5462262947671272004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1114,7 +1138,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8051680304098711060}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Tech.C.SceneController, Assembly-CSharp
+        m_MethodName: LoadStage3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5016103014361864460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1138,6 +1174,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7832446885922056899}
+  - component: {fileID: 710527660267525547}
   m_Layer: 0
   m_Name: Title
   m_TagString: Untagged
@@ -1163,6 +1200,18 @@ Transform:
   - {fileID: 6550728015962803188}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &710527660267525547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7130067429311201281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41c906058a8c0254a8e099a08a23fd6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7144754574949535817
 GameObject:
   m_ObjectHideFlags: 0
@@ -1859,7 +1908,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4649175900074558719}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Tech.C.SceneController, Assembly-CSharp
+        m_MethodName: LoadStage2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3103059533299422741
 MonoBehaviour:
   m_ObjectHideFlags: 0
