@@ -132,7 +132,7 @@ namespace Tech.C.UI
             // タイトルシーンに遷移
             if (SceneController.I != null)
             {
-                SceneController.I.LoadScene("Title");
+                SceneController.I.LoadScene(SceneType.Title);
             }
         }
         

@@ -8,27 +8,53 @@ namespace Tech.C
 {
     public class SceneController : Singleton<SceneController>
     {
-        public void LoadScene(string sceneName)
+        public void LoadScene(SceneType sceneType)
         {
-            PlayBGMForScene(sceneName);
-            SceneManager.LoadScene(sceneName);
+            PlayBGMForScene(sceneType);
+            SceneManager.LoadScene(sceneType.ToString());
         }
         
-        private void PlayBGMForScene(string sceneName)
+        // Button OnClickイベント用の個別メソッド
+        public void LoadTitle() => LoadScene(SceneType.Title);
+        public void LoadStage1() => LoadScene(SceneType.Stage1);
+        public void LoadStage2() => LoadScene(SceneType.Stage2);
+        public void LoadStage3() => LoadScene(SceneType.Stage3);
+        public void LoadStage4() => LoadScene(SceneType.Stage4);
+        public void LoadGoodEnd() => LoadScene(SceneType.GoodEnd);
+        public void LoadBadEnd() => LoadScene(SceneType.BadEnd);
+        
+        public void LoadScene(string sceneName)
         {
-            switch (sceneName)
+            if (Enum.TryParse<SceneType>(sceneName, out SceneType sceneType))
             {
-                case "Title":
+                LoadScene(sceneType);
+            }
+            else
+            {
+                Debug.LogWarning($"Unknown scene name: {sceneName}");
+                SceneManager.LoadScene(sceneName);
+            }
+        }
+        
+        private void PlayBGMForScene(SceneType sceneType)
+        {
+            if (AudioManager.I == null) return;
+            
+            switch (sceneType)
+            {
+                case SceneType.Title:
                     AudioManager.I.PlayBGM(BgmType.Title);
                     break;
-                case "InGame":
-                case "GameScene":
+                case SceneType.Stage1:
+                case SceneType.Stage2:
+                case SceneType.Stage3:
+                case SceneType.Stage4:
                     AudioManager.I.PlayBGM(BgmType.InGame);
                     break;
-                case "GoodEnd":
+                case SceneType.GoodEnd:
                     AudioManager.I.PlayBGM(BgmType.GoodEnd);
                     break;
-                case "BadEnd":
+                case SceneType.BadEnd:
                     AudioManager.I.PlayBGM(BgmType.BadEnd);
                     break;
             }

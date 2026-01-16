@@ -94,7 +94,7 @@ namespace Tech.C
             {
                 AudioManager.I.PlaySE(SeType.GamblingGaugeFull);
                 PlayerPrefs.SetString("lastPlayedScene", SceneManager.GetActiveScene().name);
-                SceneController.I.LoadScene("BadEnd");
+                SceneController.I.LoadScene(SceneType.BadEnd);
             }
         }
 
@@ -107,7 +107,7 @@ namespace Tech.C
             {
                 AudioManager.I.PlaySE(SeType.EntertainmentGaugeFull);
                 PlayerPrefs.SetString("lastPlayedScene", SceneManager.GetActiveScene().name);
-                SceneController.I.LoadScene("GoodEnd");
+                SceneController.I.LoadScene(SceneType.GoodEnd);
             }
         }
 

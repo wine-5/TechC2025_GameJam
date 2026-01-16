@@ -8,8 +8,8 @@ public class MultiSceneLoadManager : MonoBehaviour
     [System.Serializable]
     public class ButtonScenePair
     {
-        public Button button;          // UIボタン
-        public string sceneName;       // このボタンが遷移するシーン名
+        public Button button;
+        public SceneType sceneType;
     }
 
     [Header("ボタンと遷移先シーンの対応リスト")]
@@ -28,9 +28,9 @@ public class MultiSceneLoadManager : MonoBehaviour
 
         foreach (var pair in buttonScenePairs)
         {
-            if (pair.button != null && !string.IsNullOrEmpty(pair.sceneName))
+            if (pair.button != null && pair.sceneType != SceneType.None)
             {
-                string targetScene = pair.sceneName; // クロージャ対策でローカルにコピー
+                SceneType targetScene = pair.sceneType;
 
                 pair.button.onClick.AddListener(() =>
                 {
@@ -40,18 +40,21 @@ public class MultiSceneLoadManager : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("ボタンまたはシーン名が未設定のエントリがあります");
+                Debug.LogWarning("ボタンまたはシーンタイプが未設定のエントリがあります");
             }
         }
     }
 
     // 非同期ロード＋UI更新を行うコルーチン
-    private System.Collections.IEnumerator LoadSceneAsyncWithUI(string sceneName)
+    private System.Collections.IEnumerator LoadSceneAsyncWithUI(SceneType sceneType)
     {
         if (loadingPanel != null)
             loadingPanel.SetActive(true);
 
-        AsyncOperation asyncLoad = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneName);
+        // BGMを再生（シーン読み込み前に）
+        PlayBGMForScene(sceneType);
+
+        AsyncOperation asyncLoad = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneType.ToString());
         asyncLoad.allowSceneActivation = false;
 
         while (!asyncLoad.isDone)
@@ -71,6 +74,42 @@ public class MultiSceneLoadManager : MonoBehaviour
 
         if (loadingPanel != null)
             loadingPanel.SetActive(false);
+    }
+
+    private void PlayBGMForScene(SceneType sceneType)
+    {
+        Debug.Log($"[Stagebutton] PlayBGMForScene called with sceneType: {sceneType}");
+        
+        if (AudioManager.I == null)
+        {
+            Debug.LogError("[Stagebutton] AudioManager.I is null!");
+            return;
+        }
+
+        Debug.Log($"[Stagebutton] AudioManager found, switching BGM for scene: {sceneType}");
+
+        switch (sceneType)
+        {
+            case SceneType.Title:
+                AudioManager.I.PlayBGM(BgmType.Title);
+                break;
+            case SceneType.Stage1:
+            case SceneType.Stage2:
+            case SceneType.Stage3:
+            case SceneType.Stage4:
+                Debug.Log("[Stagebutton] Calling PlayBGM(BgmType.InGame)");
+                AudioManager.I.PlayBGM(BgmType.InGame);
+                break;
+            case SceneType.GoodEnd:
+                AudioManager.I.PlayBGM(BgmType.GoodEnd);
+                break;
+            case SceneType.BadEnd:
+                AudioManager.I.PlayBGM(BgmType.BadEnd);
+                break;
+            default:
+                Debug.LogWarning($"[Stagebutton] Unknown scene type: {sceneType}");
+                break;
+        }
     }
 }
 

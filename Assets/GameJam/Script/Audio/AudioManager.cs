@@ -155,10 +155,18 @@ namespace Tech.C.Audio
         /// </summary>
         public void PlayBGM(BgmType bgmType)
         {
-            if (bgmType == BgmType.None) return;
+            Debug.Log($"[AudioManager] PlayBGM called with bgmType: {bgmType}");
+            
+            if (bgmType == BgmType.None)
+            {
+                Debug.Log("[AudioManager] bgmType is None, skipping");
+                return;
+            }
             
             if (bgmAudioDictionary.TryGetValue(bgmType, out BgmAudioData bgmData))
             {
+                Debug.Log($"[AudioManager] Found BGM data for {bgmType}, AudioClip: {bgmData.AudioClip?.name ?? "null"}");
+                
                 if (bgmData.AudioClip != null)
                 {
                     // 既存のBGMを停止
@@ -173,12 +181,21 @@ namespace Tech.C.Audio
                         audioSource.Play();
                         
                         currentBgmSource = audioSource;
+                        Debug.Log($"[AudioManager] BGM '{bgmType}' started playing");
                     }
+                    else
+                    {
+                        Debug.LogError("[AudioManager] No available AudioSource!");
+                    }
+                }
+                else
+                {
+                    Debug.LogWarning($"[AudioManager] AudioClip is null for BGM '{bgmType}'");
                 }
             }
             else
             {
-                Debug.LogWarning($"AudioManager: BGM '{bgmType}' が見つかりません");
+                Debug.LogWarning($"AudioManager: BGM '{bgmType}' が見つかりません. Dictionary count: {bgmAudioDictionary.Count}");
             }
         }
 
