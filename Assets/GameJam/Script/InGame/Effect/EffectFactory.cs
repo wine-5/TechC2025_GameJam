@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Tech.C.Item;
 using Tech.C.Player;
+using Tech.C.Pooling;
 
 namespace Tech.C.Effect
 {
@@ -14,17 +15,15 @@ namespace Tech.C.Effect
         [Header("Effect Data")]
         [SerializeField] private EffectDataSO effectDataSO;
 
-        [Header("Pool Settings")]
-        [SerializeField] private int initialPoolSize = 5;
+        [Header("Pool Reference")]
+        [SerializeField] private ObjectPool effectPool;
 
         private Dictionary<ItemType, EffectData> effectDataDictionary;
-        private Dictionary<ItemType, ObjectPool<EffectController>> effectPools;
 
         protected override void Awake()
         {
             base.Awake();
             InitializeEffectData();
-            InitializeEffectPools();
         }
 
         /// <summary>
@@ -53,49 +52,17 @@ namespace Tech.C.Effect
         }
 
         /// <summary>
-        /// 各エフェクトタイプ用のObjectPoolを初期化
-        /// </summary>
-        private void InitializeEffectPools()
-        {
-            effectPools = new Dictionary<ItemType, ObjectPool<EffectController>>();
-
-            foreach (var kvp in effectDataDictionary)
-            {
-                var itemType = kvp.Key;
-                var data = kvp.Value;
-
-                var pool = new ObjectPool<EffectController>(
-                    () => CreateEffectInstance(data.EffectPrefab),
-                    transform,
-                    initialPoolSize
-                );
-
-                effectPools[itemType] = pool;
-            }
-        }
-
-        /// <summary>
-        /// エフェクトインスタンスを作成
-        /// </summary>
-        private EffectController CreateEffectInstance(GameObject prefab)
-        {
-            var instance = Instantiate(prefab);
-            var controller = instance.GetComponent<EffectController>();
-
-            if (controller == null)
-            {
-                controller = instance.AddComponent<EffectController>();
-            }
-
-            return controller;
-        }
-
-        /// <summary>
         /// エフェクトを再生（ItemTypeで指定）
         /// </summary>
         public void PlayEffect(ItemType itemType)
         {
             if (itemType == ItemType.None) return;
+
+            if (effectPool == null)
+            {
+                Debug.LogError("[EffectFactory] ObjectPoolが設定されていません！");
+                return;
+            }
 
             if (!effectDataDictionary.ContainsKey(itemType))
             {
@@ -103,29 +70,38 @@ namespace Tech.C.Effect
                 return;
             }
 
-            if (!effectPools.ContainsKey(itemType))
+            var data = effectDataDictionary[itemType];
+            
+            // ObjectPoolからエフェクトを取得
+            GameObject effectObj = effectPool.GetObject(data.EffectPrefab);
+            if (effectObj == null)
             {
-                Debug.LogError($"[EffectFactory] ItemType '{itemType}' のPoolが見つかりません");
+                Debug.LogError($"[EffectFactory] エフェクトの取得に失敗しました: {data.EffectPrefab.name}");
                 return;
             }
 
-            var data = effectDataDictionary[itemType];
-            var pool = effectPools[itemType];
-            var effect = pool.Get();
+            var effect = effectObj.GetComponent<EffectController>();
+            if (effect == null)
+            {
+                Debug.LogError($"[EffectFactory] EffectControllerが見つかりません: {effectObj.name}");
+                effectPool.ReturnObject(effectObj);
+                return;
+            }
 
             // Playerの位置を取得
             Transform playerTransform = PlayerDataProvider.I?.GetPlayerTransform();
             if (playerTransform == null)
             {
                 Debug.LogWarning("[EffectFactory] PlayerTransformが見つかりません");
-                effect.transform.position = Vector3.zero;
-                effect.transform.SetParent(transform);
+                effectObj.transform.position = Vector3.zero;
             }
             else
             {
                 // Playerの子オブジェクトとして配置（追従）
-                effect.transform.SetParent(playerTransform);
-                effect.transform.localPosition = Vector3.zero;
+                effectObj.transform.SetParent(playerTransform);
+                effectObj.transform.localPosition = Vector3.zero;
+                effectObj.transform.localRotation = Quaternion.identity;
+                effectObj.transform.localScale = Vector3.one;
             }
 
             // エフェクトを再生
@@ -155,15 +131,14 @@ namespace Tech.C.Effect
         {
             if (effect == null) return;
 
-            // 親をFactoryに戻す
-            effect.transform.SetParent(transform);
-
-            // Poolに返却するために、どのタイプか判定
-            foreach (var kvp in effectPools)
+            if (effectPool == null)
             {
-                kvp.Value.Return(effect);
+                Debug.LogError("[EffectFactory] ObjectPoolが設定されていません！");
+                Destroy(effect.gameObject);
                 return;
             }
+
+            effectPool.ReturnObject(effect.gameObject);
         }
     }
 }
