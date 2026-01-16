@@ -75,13 +75,14 @@ namespace Tech.C.Audio
             seAudioDictionary = new Dictionary<SeType, SeAudioData>();
             bgmAudioDictionary = new Dictionary<BgmType, BgmAudioData>();
             
-            if (audioDataSO == null)
-            {
-                Debug.LogError("[AudioManager] AudioDataSOが設定されていません! " +
-                    "AudioManagerのInspectorで 'Audio Data' フィールドにAudioDataSOをアタッチしてください。" +
-                    "音声は再生されません。");
-                return;
-            }
+            // デバックのため削除中:ビルドするときに有効化にすること
+            // if (audioDataSO == null)
+            // {
+            //     Debug.LogError("[AudioManager] AudioDataSOが設定されていません! " +
+            //         "AudioManagerのInspectorで 'Audio Data' フィールドにAudioDataSOをアタッチしてください。" +
+            //         "音声は再生されません。");
+            //     return;
+            // }
             
             // SEデータを辞書に登録
             if (audioDataSO.SeAudioDataList != null)
