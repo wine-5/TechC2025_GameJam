@@ -304,6 +304,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &318548885 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8901844770393136724, guid: f9ff4985f8582f94bbef7b2a974a818c, type: 3}
+  m_PrefabInstance: {fileID: 1180855323}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &318548887 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5094777004483174357, guid: f9ff4985f8582f94bbef7b2a974a818c, type: 3}
+  m_PrefabInstance: {fileID: 1180855323}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318548885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
+--- !u!114 &318548888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318548885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77112457ff4f9fb4eaa8b44d6a942d1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeType: 1
+  volumeSlider: {fileID: 318548887}
 --- !u!224 &475050701 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7399419544748305128, guid: f9ff4985f8582f94bbef7b2a974a818c, type: 3}
@@ -468,6 +498,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverScale: 1.1
   animationSpeed: 5
+--- !u!1 &957536050 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2329208542619219792, guid: f9ff4985f8582f94bbef7b2a974a818c, type: 3}
+  m_PrefabInstance: {fileID: 1180855323}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &957536052 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4110019892802133199, guid: f9ff4985f8582f94bbef7b2a974a818c, type: 3}
+  m_PrefabInstance: {fileID: 1180855323}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957536050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
+--- !u!114 &957536053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957536050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77112457ff4f9fb4eaa8b44d6a942d1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeType: 2
+  volumeSlider: {fileID: 957536052}
 --- !u!1001 &1180855323
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -671,6 +731,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 488442792462131622, guid: f9ff4985f8582f94bbef7b2a974a818c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1180855325}
+    - targetCorrespondingSourceObject: {fileID: 8901844770393136724, guid: f9ff4985f8582f94bbef7b2a974a818c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 318548888}
+    - targetCorrespondingSourceObject: {fileID: 2329208542619219792, guid: f9ff4985f8582f94bbef7b2a974a818c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 957536053}
   m_SourcePrefab: {fileID: 100100000, guid: f9ff4985f8582f94bbef7b2a974a818c, type: 3}
 --- !u!1 &1180855324 stripped
 GameObject:
@@ -752,6 +818,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1503850069}
+    - target: {fileID: 521838695533573940, guid: e8c5fa9028c2bf64a9325c548579e5bb, type: 3}
+      propertyPath: displayInterval
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1176182406726642872, guid: e8c5fa9028c2bf64a9325c548579e5bb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

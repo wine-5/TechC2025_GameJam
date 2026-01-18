@@ -25,7 +25,7 @@ MonoBehaviour:
   bgmAudioDataList:
   - bgmType: 1
     audioClip: {fileID: 8300000, guid: d9ba043339eba0e478caa1c5112f58b4, type: 3}
-    volumeMultiplier: 0.3
+    volumeMultiplier: 0.5
     loop: 1
     useFadeIn: 0
     fadeInDuration: 0
@@ -35,13 +35,13 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 62d4ec24fccdb3d41a7b51b858f17880, type: 3}
     volumeMultiplier: 0.4
     loop: 1
-    useFadeIn: 0
-    fadeInDuration: 0
+    useFadeIn: 1
+    fadeInDuration: 0.5
     useFadeOut: 0
     fadeOutDuration: 0
   - bgmType: 3
     audioClip: {fileID: 8300000, guid: 2bca48c3420370241be21c776daf5a87, type: 3}
-    volumeMultiplier: 0.6
+    volumeMultiplier: 1.2
     loop: 1
     useFadeIn: 0
     fadeInDuration: 0
