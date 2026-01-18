@@ -17,5 +17,5 @@ MonoBehaviour:
     effectPrefab: {fileID: 9124914917940069380, guid: e9cf35a6d9797114cb3d3a3bcb5382f5, type: 3}
     duration: 1
   - itemType: 2
-    effectPrefab: {fileID: 9124914917940069380, guid: b3c8bc1b2ccd7ba4a9ddef3c6a914071, type: 3}
+    effectPrefab: {fileID: 8050545488020152298, guid: b3c8bc1b2ccd7ba4a9ddef3c6a914071, type: 3}
     duration: 1

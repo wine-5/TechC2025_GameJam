@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8181654732552106672
+--- !u!1 &6408494206200393918
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7653082703118397304}
-  - component: {fileID: 2139759870307350967}
-  - component: {fileID: 2128452456219115997}
+  - component: {fileID: 6456361087341519489}
+  - component: {fileID: 338472182774923840}
+  - component: {fileID: 4142130666571628833}
   m_Layer: 0
-  m_Name: EntertainmentEffect
+  m_Name: GamblingEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7653082703118397304
+--- !u!4 &6456361087341519489
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8181654732552106672}
+  m_GameObject: {fileID: 6408494206200393918}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.85010576, y: 0.8326225, z: 0.0074459463}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6838578754632548788}
+  m_Father: {fileID: 6695883514408111799}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!2083052967 &2139759870307350967
+--- !u!2083052967 &338472182774923840
 VisualEffect:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8181654732552106672}
+  m_GameObject: {fileID: 6408494206200393918}
   m_Enabled: 1
-  m_Asset: {fileID: 8926484042661614526, guid: c8e594b14c2348442ba4e8b258181e24, type: 3}
+  m_Asset: {fileID: 8926484042661614526, guid: 692d28a3837c75b4fb8f5fa5e8a5c30b, type: 3}
   m_InitialEventName: OnPlay
   m_InitialEventNameOverriden: 0
   m_StartSeed: 0
@@ -71,14 +71,14 @@ VisualEffect:
       m_Array: []
     m_Bool:
       m_Array: []
---- !u!73398921 &2128452456219115997
+--- !u!73398921 &4142130666571628833
 VFXRenderer:
   serializedVersion: 1
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8181654732552106672}
+  m_GameObject: {fileID: 6408494206200393918}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -114,7 +114,7 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1 &9124914917940069380
+--- !u!1 &8050545488020152298
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,8 +122,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6838578754632548788}
-  - component: {fileID: -2619956630871314441}
+  - component: {fileID: 6695883514408111799}
+  - component: {fileID: -8090780495578669190}
   m_Layer: 0
   m_Name: GamblingEffect
   m_TagString: Untagged
@@ -131,29 +131,29 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6838578754632548788
+--- !u!4 &6695883514408111799
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9124914917940069380}
+  m_GameObject: {fileID: 8050545488020152298}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.85010576, y: -0.8326225, z: -0.0074459463}
+  m_LocalPosition: {x: 0, y: -1.442, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7653082703118397304}
+  - {fileID: 6456361087341519489}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-2619956630871314441
+--- !u!114 &-8090780495578669190
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9124914917940069380}
+  m_GameObject: {fileID: 8050545488020152298}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78f8e7f08f1885446a3d59a59b361470, type: 3}

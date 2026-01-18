@@ -119,37 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &125989799
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 125989800}
-  m_Layer: 0
-  m_Name: EntertainmentEffect
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &125989800
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 125989799}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1985060497}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1158008194
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -215,11 +184,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4442787887898312949, guid: 8c2e56361750888469f29c614e8bfdae, type: 3}
+    - {fileID: 1784159364590221930, guid: 8c2e56361750888469f29c614e8bfdae, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3316301877087609423, guid: 8c2e56361750888469f29c614e8bfdae, type: 3}
       insertIndex: 9
-      addedObject: {fileID: 1728885390}
+      addedObject: {fileID: 1473426542}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c2e56361750888469f29c614e8bfdae, type: 3}
 --- !u!4 &1158008195 stripped
@@ -227,141 +198,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3316301877087609423, guid: 8c2e56361750888469f29c614e8bfdae, type: 3}
   m_PrefabInstance: {fileID: 1158008194}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1182167855
-GameObject:
+--- !u!1001 &1473426541
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1182167856}
-  m_Layer: 0
-  m_Name: GamblingEffect
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1182167856
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1182167855}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1985060497}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1728885389
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1728885390}
-  m_Layer: 0
-  m_Name: EffectPool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1728885390
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1158008195}
+    m_Modifications:
+    - target: {fileID: 1662800399805783794, guid: 12234e4d13dc5eb4b81012dc051d8e0a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.89671695
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662800399805783794, guid: 12234e4d13dc5eb4b81012dc051d8e0a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.072858
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662800399805783794, guid: 12234e4d13dc5eb4b81012dc051d8e0a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0074459463
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662800399805783794, guid: 12234e4d13dc5eb4b81012dc051d8e0a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662800399805783794, guid: 12234e4d13dc5eb4b81012dc051d8e0a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662800399805783794, guid: 12234e4d13dc5eb4b81012dc051d8e0a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662800399805783794, guid: 12234e4d13dc5eb4b81012dc051d8e0a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662800399805783794, guid: 12234e4d13dc5eb4b81012dc051d8e0a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662800399805783794, guid: 12234e4d13dc5eb4b81012dc051d8e0a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662800399805783794, guid: 12234e4d13dc5eb4b81012dc051d8e0a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2479776741754567882, guid: 12234e4d13dc5eb4b81012dc051d8e0a, type: 3}
+      propertyPath: m_Name
+      value: EffectPool
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 12234e4d13dc5eb4b81012dc051d8e0a, type: 3}
+--- !u!4 &1473426542 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1662800399805783794, guid: 12234e4d13dc5eb4b81012dc051d8e0a, type: 3}
+  m_PrefabInstance: {fileID: 1473426541}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1728885389}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.89671695, y: -1.072858, z: -0.0074459463}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1985060497}
-  m_Father: {fileID: 1158008195}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1985060496
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1985060497}
-  - component: {fileID: 1985060499}
-  - component: {fileID: 1985060498}
-  m_Layer: 0
-  m_Name: EffectFactory
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1985060497
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1985060496}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 125989800}
-  - {fileID: 1182167856}
-  m_Father: {fileID: 1728885390}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1985060498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1985060496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9eb6210dc18c7e4429cba4dd09e0a9eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  effectDataSO: {fileID: 11400000, guid: 840f60bf108ad55478cc05effd8b7f5e, type: 2}
-  initialPoolSize: 5
---- !u!114 &1985060499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1985060496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 141197c1ba566bb47883edd5732ad778, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolItems:
-  - name: EntertainmentEffect
-    prefab: {fileID: 9124914917940069380, guid: e9cf35a6d9797114cb3d3a3bcb5382f5, type: 3}
-    parent: {fileID: 125989799}
-    initialSize: 5
-  - name: GamblingEffect
-    prefab: {fileID: 9124914917940069380, guid: b3c8bc1b2ccd7ba4a9ddef3c6a914071, type: 3}
-    parent: {fileID: 1182167855}
-    initialSize: 5
-  autoExpand: 1
-  expandSize: 5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
