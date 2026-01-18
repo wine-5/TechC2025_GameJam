@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System;
 
 namespace Tech.C
 {
@@ -23,8 +24,9 @@ namespace Tech.C
         private float currentSpeed;
         private bool isFading;
         private Color baseColor;
+        private Action<TextMeshProUGUI> onCompleteCallback;
 
-        public void Initialize(TextMeshProUGUI tmpObj, Vector3 start, Vector3 target, float speed, float accel, float fadeStart, float fadeTime)
+        public void Initialize(TextMeshProUGUI tmpObj, Vector3 start, Vector3 target, float speed, float accel, float fadeStart, float fadeTime, Action<TextMeshProUGUI> onComplete = null)
         {
             tmp = tmpObj;
             startPosition = start;
@@ -33,6 +35,7 @@ namespace Tech.C
             acceleration = accel;
             fadeStartTime = fadeStart;
             fadeDuration = fadeTime;
+            onCompleteCallback = onComplete;
             elapsed = 0f;
             currentSpeed = moveSpeed;
             isFading = false;
@@ -67,6 +70,7 @@ namespace Tech.C
                 {
                     tmp.gameObject.SetActive(false);
                     enabled = false;
+                    onCompleteCallback?.Invoke(tmp);
                 }
             }
         }

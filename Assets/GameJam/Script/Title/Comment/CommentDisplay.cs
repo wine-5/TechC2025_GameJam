@@ -6,15 +6,15 @@ namespace Tech.C
     public class CommentDisplay : MonoBehaviour
     {
         [Header("コメント抽選クラス（Serializable）")]
-        public CommentRandomSelector randomSelector;
+        [SerializeField] private CommentRandomSelector randomSelector;
         [Header("コメント移動クラス（Prefabにアタッチ）")]
-        public CommentMover commentMoverPrefab;
+        [SerializeField] private CommentMover commentMoverPrefab;
         [Header("表示するTMPオブジェクトの親")] 
-        public Transform displayParent;
+        [SerializeField] private Transform displayParent;
         [Header("コメントPool")]
-        public CommentPool commentPool;
+        [SerializeField] private CommentPool commentPool;
         [Header("表示間隔（秒）")]
-        public float displayInterval = 2f;
+        [SerializeField] private float displayInterval = 2f;
 
         // コメント開始位置の設定（16方向）
         private const int START_POS_COUNT = 16;
@@ -91,7 +91,8 @@ namespace Tech.C
                 INIT_SPEED,
                 INIT_ACCEL,
                 INIT_FADE_START,
-                INIT_FADE_DURATION
+                INIT_FADE_DURATION,
+                (comment) => commentPool.ReturnComment(comment) // コールバックでプールに戻す
             );
         }
     }
