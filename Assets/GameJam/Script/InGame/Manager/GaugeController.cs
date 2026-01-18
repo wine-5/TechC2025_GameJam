@@ -92,7 +92,6 @@ namespace Tech.C
             
             if (gambleValue >= MAX_GAMBLE)
             {
-                AudioManager.I.PlaySE(SeType.GamblingGaugeFull);
                 PlayerPrefs.SetString("lastPlayedScene", SceneManager.GetActiveScene().name);
                 SceneController.I.LoadScene(SceneType.BadEnd);
             }
@@ -105,7 +104,6 @@ namespace Tech.C
             
             if (entertainmentValue >= MAX_ENTERTAINMENT)
             {
-                AudioManager.I.PlaySE(SeType.EntertainmentGaugeFull);
                 PlayerPrefs.SetString("lastPlayedScene", SceneManager.GetActiveScene().name);
                 SceneController.I.LoadScene(SceneType.GoodEnd);
             }

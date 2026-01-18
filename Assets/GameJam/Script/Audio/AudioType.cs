@@ -9,8 +9,6 @@ namespace Tech.C.Audio
         ButtonClick,
         GetEntertainmentItem,
         GetGamblingItem,
-        EntertainmentGaugeFull,
-        GamblingGaugeFull,
     }
 
     /// <summary>
