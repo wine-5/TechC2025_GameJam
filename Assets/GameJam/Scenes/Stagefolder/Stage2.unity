@@ -689,18 +689,18 @@ PrefabInstance:
     - target: {fileID: 7595039957695540098, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
       propertyPath: pauseUI
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1157727224}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 4442787887898312949, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
     - {fileID: 4311393562440154341, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3316301877087609423, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
-      insertIndex: 8
-      addedObject: {fileID: 1903285898}
-    - targetCorrespondingSourceObject: {fileID: 3316301877087609423, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
-      insertIndex: -1
+      insertIndex: 2
       addedObject: {fileID: 1157727225}
+    - targetCorrespondingSourceObject: {fileID: 3316301877087609423, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
+      insertIndex: 9
+      addedObject: {fileID: 1903285898}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
 --- !u!4 &1048009004 stripped

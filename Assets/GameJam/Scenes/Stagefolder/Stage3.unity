@@ -1025,7 +1025,7 @@ PrefabInstance:
     - target: {fileID: 5172599209339668704, guid: 3100cb756c8df034f933324fd50b25ce, type: 3}
       propertyPath: pauseUI
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1354113920}
     - target: {fileID: 6302919290413937480, guid: 3100cb756c8df034f933324fd50b25ce, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1036,11 +1036,11 @@ PrefabInstance:
     - {fileID: 7979921100585377514, guid: 3100cb756c8df034f933324fd50b25ce, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3316301877087609423, guid: 3100cb756c8df034f933324fd50b25ce, type: 3}
-      insertIndex: 8
-      addedObject: {fileID: 217068678}
-    - targetCorrespondingSourceObject: {fileID: 3316301877087609423, guid: 3100cb756c8df034f933324fd50b25ce, type: 3}
-      insertIndex: -1
+      insertIndex: 2
       addedObject: {fileID: 1354113921}
+    - targetCorrespondingSourceObject: {fileID: 3316301877087609423, guid: 3100cb756c8df034f933324fd50b25ce, type: 3}
+      insertIndex: 9
+      addedObject: {fileID: 217068678}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3100cb756c8df034f933324fd50b25ce, type: 3}
 --- !u!4 &1800021905 stripped

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 namespace Tech.C
 {
@@ -11,16 +12,21 @@ namespace Tech.C
             // 値が空でなければ、そのシーンをロードする
             if (!string.IsNullOrEmpty(lastSceneName))
             {
-                SceneManager.LoadScene(lastSceneName);
+                // SceneControllerを使用してBGMも正しく変更されるようにする
+                if (Enum.TryParse<SceneType>(lastSceneName, out SceneType sceneType))
+                {
+                    SceneController.I.LoadScene(sceneType);
+                }
+                else
+                {
+                    // 万一SceneTypeに変換できない場合は直接ロード
+                    SceneManager.LoadScene(lastSceneName);
+                }
             }
             else
             {
-                SceneController.I.LoadScene("Title");
-
+                SceneController.I.LoadScene(SceneType.Title);
             }
-
-            // Update is called once per frame
-          
         }
     }
 }

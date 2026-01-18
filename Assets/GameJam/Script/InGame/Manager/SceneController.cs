@@ -10,8 +10,26 @@ namespace Tech.C
     {
         public void LoadScene(SceneType sceneType)
         {
+            // ゲームステージの場合は最後にプレイしたシーンとして記録
+            if (IsGameStage(sceneType))
+            {
+                PlayerPrefs.SetString("lastPlayedScene", sceneType.ToString());
+                PlayerPrefs.Save();
+            }
+            
             PlayBGMForScene(sceneType);
             SceneManager.LoadScene(sceneType.ToString());
+        }
+        
+        /// <summary>
+        /// ゲームステージかどうかを判定
+        /// </summary>
+        private bool IsGameStage(SceneType sceneType)
+        {
+            return sceneType == SceneType.Stage1 || 
+                   sceneType == SceneType.Stage2 || 
+                   sceneType == SceneType.Stage3 || 
+                   sceneType == SceneType.Stage4;
         }
         
         // Button OnClickイベント用の個別メソッド
